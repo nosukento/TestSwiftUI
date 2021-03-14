@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        Image("seaSky")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+//            .frame(width: 300, height: 700)
+//            .clipped()
+            .overlay(
         VStack{ // V = Vertical(垂直)に並べる
             HStack{ // H = Horisontal(水平)に並べる
                 Text("NEW PROJECT") // テキスト表示
@@ -21,9 +27,11 @@ struct ContentView: View {
             Spacer() // スペースを開ける
             VStack{
             	HStack {
-            	    Text("Hello,World")
-            	        .font(.title)
-            	        .fontWeight(.black)
+                    VStack {
+                        Text("Hello,World")
+                            .font(.title)
+                            .fontWeight(.black)
+                    }
                 	Text("sunset")
                 	    .font(.title3)
                 	    .foregroundColor(Color.orange)
@@ -41,17 +49,18 @@ struct ContentView: View {
             Spacer()
             VStack(alignment: .trailing){
                 Text("present by Ryunosuke")
+                    .foregroundColor(Color.white)
                     .italic()
                     .border(Color.red, width: 2)
-                    
+
             }
             .padding(.leading, 170.0)
-            
-            
+
+
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .border(Color.green, width: 5)
-        
+      )
     }
 }
 
